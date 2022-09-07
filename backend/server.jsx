@@ -27,7 +27,7 @@ app.post('/api/order', jwtCheck, checkScopes, function(req, res) {
   console.log(req.body)
 
   res.json({
-    message: 'Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this.'
+    message: 'Hello from a private endpoint! You need to be authenticated and have a scope of read:orders to see this.'
   });
 
 
