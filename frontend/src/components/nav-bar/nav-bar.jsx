@@ -46,7 +46,12 @@ const Nav = () => {
                 </div>
             
             <AuthenticationButton />
-            <SignUpButton />
+                    
+            { !isAuthenticated && (
+                <div>
+                  <SignUpButton />
+                </div>
+             )}
             </nav>  
             
 
