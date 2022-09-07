@@ -1,0 +1,47 @@
+.card img {
+
+    height: 40rem;
+    width: 40rem;
+    object-fit: cover;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card {
+
+    margin: 30px;
+    align-items: center;
+    display: flex;
+}
+
+.card-body {
+    display: block;
+    padding-top: 0;
+
+}
+
+.card-body h5 {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.card-body button {
+    margin: auto;
+    width: 20rem;
+}
+
+.email-title {
+    width: 650px;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: honeydew;
+}
+
+.email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

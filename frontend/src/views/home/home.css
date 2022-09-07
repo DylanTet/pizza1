@@ -1,0 +1,12 @@
+.home {
+    background-color: darkolivegreen;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0;
+    padding-top: 4rem;
+    font-size: 5rem;
+}

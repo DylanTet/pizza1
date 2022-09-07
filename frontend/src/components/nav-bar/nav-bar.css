@@ -1,0 +1,33 @@
+.nav-container {
+
+    height: 70px;
+    background-color: darkgray;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 3rem;
+    padding: 0 40px;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    padding: 0 20px;
+}
