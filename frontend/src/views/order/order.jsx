@@ -55,9 +55,9 @@ const Order = () => {
                             <img src="https://cookieandkate.com/images/2021/07/classic-margherita-pizza.jpg" class="card-img-top" />
                             <div class="card-body">
                                 <h5 class="card-title">{margheritaPizza.name}</h5>
-                            
+                                {user.email_verified &&
                                     <button type="button" class="btn btn-primary" onClick={() => sendOrder(margheritaPizza.name)}>Place Order</button>
-                            
+                                }
                             </div>
                         </div>
                     </div>
