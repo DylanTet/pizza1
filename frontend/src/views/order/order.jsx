@@ -16,12 +16,15 @@ const Order = () => {
         try {
             const token = await getAccessTokenSilently()
 
-            axios.request({
-                method: "GET",
+            axios({
+                method: "post",
                 url: `http://localhost:6060/api/order`,
                 headers: {
                     authorization: `Bearer ${token}`,
-                }
+                    'content-type': 'application/json'
+                },
+                body: {pizzaType: pizza}
+                
             })
             .then(function (response){
                 console.log(response)
@@ -52,9 +55,9 @@ const Order = () => {
                             <img src="https://cookieandkate.com/images/2021/07/classic-margherita-pizza.jpg" class="card-img-top" />
                             <div class="card-body">
                                 <h5 class="card-title">{margheritaPizza.name}</h5>
-                                { user.email_verified && (
+                            
                                     <button type="button" class="btn btn-primary" onClick={() => sendOrder(margheritaPizza.name)}>Place Order</button>
-                                )}
+                            
                             </div>
                         </div>
                     </div>
@@ -64,7 +67,7 @@ const Order = () => {
                             <div class="card-body">
                                 <h5 class="card-title">{pepPizza.name}</h5>
                                 { user.email_verified && (
-                                    <button type="button" class="btn btn-primary" onClick={() => sendOrder(margheritaPizza.name)}>Place Order</button>
+                                    <button type="button" class="btn btn-primary" onClick={() => sendOrder(pepPizza.name)}>Place Order</button>
                                 )}                        
                             </div>
                         </div>
@@ -75,7 +78,7 @@ const Order = () => {
                             <div class="card-body">
                                 <h5 class="card-title">{buffPizza.name}</h5>
                                 { user.email_verified && (
-                                    <button type="button" class="btn btn-primary" onClick={() => sendOrder(margheritaPizza.name)}>Place Order</button>
+                                    <button type="button" class="btn btn-primary" onClick={() => sendOrder(buffPizza.name)}>Place Order</button>
                                 )}                        
                             </div>
                         </div>
@@ -86,7 +89,7 @@ const Order = () => {
                             <div class="card-body">
                                 <h5 class="card-title">{bbqPizza.name}</h5>
                                 { user.email_verified && (
-                                    <button type="button" class="btn btn-primary" onClick={() => sendOrder(margheritaPizza.name)}>Place Order</button>
+                                    <button type="button" class="btn btn-primary" onClick={() => sendOrder(bbqPizza.name)}>Place Order</button>
                                 )}                        
                             </div>
                         </div>

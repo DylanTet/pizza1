@@ -11,6 +11,7 @@ const clientOrigins = "http://localhost:3000"
 // exist and be verified against the Auth0 JSON Web Key Set.
 app.use(cors({ origin: clientOrigins }));
 
+
 const jwtCheck = auth({
   audience: "https://www.pizza-orders.com",
   issuerBaseURL: "https://dev-aw24h7vl.us.auth0.com"
@@ -19,11 +20,17 @@ const jwtCheck = auth({
 // This route needs authentication
 const checkScopes = requiredScopes('read:orders');
 
-app.get('/api/order', jwtCheck, checkScopes, function(req, res) {
+app.use(express.json())
+
+app.post('/api/order', jwtCheck, checkScopes, function(req, res) {
+
+  console.log(req.body)
+
   res.json({
     message: 'Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this.'
   });
-    
+
+
     var ManagementClient = require('auth0').ManagementClient;
     var management = new ManagementClient({
       domain: 'dev-aw24h7vl.us.auth0.com',
@@ -38,7 +45,7 @@ app.get('/api/order', jwtCheck, checkScopes, function(req, res) {
       } else {
 
         usersOrders = user.user_metadata.orders || []
-        user.user_metadata.orders.push("pizza")
+        user.user_metadata.orders.push('pizza')
 
         management.updateUser({id: user.user_id}, {user_metadata: {orders: usersOrders}})
         console.log(user.user_metadata.orders)
