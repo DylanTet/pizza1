@@ -53,6 +53,6 @@ app.post('/api/order', jwtCheck, checkScopes, function(req, res) {
     });
 });
 
-app.listen(6060, function() {
-  console.log('Listening on http://localhost:6060');
+app.listen(process.env.PORT || 6060, function() {
+  console.log('Listening...);
 });
