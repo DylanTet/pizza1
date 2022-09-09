@@ -7,8 +7,6 @@ import axios from 'axios'
 
 const Order = () => {
 
-    const serverUrl = process.env.REACT_APP_AUTH0_SERVER_URL
-
     const { getAccessTokenSilently, user, checkSession } = useAuth0();
 
     async function sendOrder(pizza) {
