@@ -54,5 +54,5 @@ app.post('/api/order', jwtCheck, checkScopes, function(req, res) {
 });
 
 app.listen(process.env.PORT || 6060, function() {
-  console.log('Listening...);
+  console.log('Listening...')
 });
